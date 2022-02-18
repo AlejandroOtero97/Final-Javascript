@@ -9,13 +9,18 @@
 </head>
 <body>
 
-    <div class="flex">
+    <div class="container">
         <fieldset class="field_one">
             <legend>Character Creation</legend>
                 <div id="mensaje">...............</div>
                 <img src="index1.png" id="mainImage" alt="">
                 <button id="btnImage">¡Generate Character!</button> 
                 <button id="btnName">¡Generate a Nickname!</button>
+        </fieldset>
+
+        <fieldset class="stats">
+            <legend>Statistics</legend>
+                
         </fieldset>
 
         <fieldset class="field_two">
@@ -29,6 +34,24 @@
                 <option value="Size"></option>
             </datalist>
             <h2 id="clase">Press Enter after choosing</h2>
+
+            <div class="stats_clase">
+                <div class="main_stats">
+                    <p>HitPoint:</p>
+                    <p>Mana:</p>
+                    <p>Energy:</p>
+                    <p>Strenght:</p>
+                    <p>Agility:</p>
+                </div>
+                <div class="secondary_stats">
+                    <p>intelligence:</p>
+                    <p>Luck:</p>
+                    <p>Faith:</p>
+                    <p>Dexterity:</p>
+                    <p>Adaptability:</p>
+                </div>
+
+            </div>
         </fieldset>
 
         <fieldset class="field_three">
@@ -41,7 +64,7 @@
             <div id="lsOutput"></div>
         </fieldset>
     </div>
-    
+
     <script src="jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
 </body>
