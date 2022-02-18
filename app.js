@@ -1,9 +1,5 @@
 const inpKey = document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
-const btnInsert = document.getElementById("btnInsert");
-const btnDelete = document.getElementById("btnDelete");
-const btnImage = document.getElementById("btnImage");
-const btnName = document.getElementById("btnName");
 const lsOutput = document.getElementById("lsOutput");
 
 const namesJson = {
@@ -15,12 +11,13 @@ const namesJson = {
     "nombre6": "Grommash",
     "nombre7": "Pocho'Feo"
 };
-  
-btnName.onclick = function names() {
+
+$("#btnName").on("click", function names() {
     var properties = Object.values(namesJson);
     var index = Math.floor(Math.random() * properties.length);
     document.getElementById("mensaje").innerHTML = properties[index];
-}
+});
+
 
 var imageArray = ["index1.png",
                  "index2.png",
@@ -29,24 +26,24 @@ var imageArray = ["index1.png",
                  "index5.png",
                  "index6.png"];
 
-btnImage.onclick = function image() {
+$("#btnImage").on("click", function image() {
     var randomNumber = Math.floor(Math.random()*imageArray.length);
     document.getElementById("mainImage").src = (imageArray[randomNumber]);
-}
+});
 
-btnInsert.onclick = function(){
+$("#btnInsert").on("click", function () {
     const key = inpKey.value;
     const value = inpValue.value;
     if(key && value){
         localStorage.setItem(key, value);
         location.reload();
     }
-};
+});
 
-btnDelete.onclick = function(){
+$("#btnDelete").on("click", function () {
     localStorage.clear();
     location.reload();
-};
+});
 
 for(let i = 0;(i<3 && i < localStorage.length); i++){
     const key = localStorage.key(i);
@@ -54,10 +51,9 @@ for(let i = 0;(i<3 && i < localStorage.length); i++){
     lsOutput.innerHTML += `${key}: ${value} <br/>`;
 }
 
-var clase = document.getElementById("power");
-clase.addEventListener("keydown", function (e) {
+$("#power").on("keydown", function (e) {
     if (e.key === "Enter") {  
-      validate(e);
+        validate(e);
     }
 });
 
