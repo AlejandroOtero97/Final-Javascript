@@ -1,6 +1,7 @@
 const inpKey = document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
+const titulo = document.getElementById("clase");
 
 const namesJson = {
     "nombre1": "Raghat", 
@@ -51,11 +52,18 @@ for(let i = 0;(i<3 && i < localStorage.length); i++){
     lsOutput.innerHTML += `${key}: ${value} <br/>`;
 }
 
-$("#power").on("keydown", function (e) {
-    if (e.key === "Enter") {  
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    $("#power").on("blur", function blur(e) { 
         validate(e);
-    }
-});
+    });
+    titulo.textContent = "Selecciona tu clase!";
+}else{
+    $("#power").on("keydown", function enter(e) {
+        if (e.key === "Enter") {  
+            validate(e);
+        }
+    });
+}
 
 function validate(){
     let valorClase = document.getElementById("power").value;
