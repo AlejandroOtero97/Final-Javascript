@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 5px black;
+    background: url("https://cdn.hipwallpaper.com/i/6/72/unw8Tx.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 800px;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.field_one{
+    flex: 0 0 100%;
+    width: 50%;
+    padding-top: 60px;
+    margin: 1%;
+    background-color: #686747a1;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.field_two {
+    padding-top: 65px;
+    margin: 1%;
+    background-color: #686747a1;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.field_three {
+    width: 45%;
+    height: 100%;
+    padding: 15px;
+    margin: 1%;
+    background-color: #686747a1;
+    border: 5px solid rgb(255, 255, 255);
+
+}
+
+.field_two, .field_three{
+    flex: 0 0 45%;
+    width: 45%;
+}
+
+h1{
+    margin-top: 10%;
+    text-decoration: underline;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+
+button {
+    margin: 3%;
+    border: 3px solid black;
+    padding: 20px;
+    box-shadow: 5px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 2%;
+}
+
+.input_class{
+    margin: 40px;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border-width: 1px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    width: 500px;
+}
+
+.input_account{
+    position: relative;
+    margin: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border-width: 1px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    width: 300px;
+}
+
+#mainImage{
+    height: 400px;
+}
+
+#mensaje {
+    margin-top: 5%;
+    font-size: 30px;
+}

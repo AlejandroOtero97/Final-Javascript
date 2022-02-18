@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>CharacterCreation</title>
+</head>
+<body>
+
+    <div class="flex">
+        <fieldset class="field_one">
+            <legend>Character Creation</legend>
+                <div id="mensaje">...............</div>
+                <img src="index1.png" id="mainImage" alt="">
+                <button id="btnImage">¡Generate Character!</button> 
+                <button id="btnName">¡Generate a Nickname!</button>
+        </fieldset>
+
+        <fieldset class="field_two">
+            <legend>Choose Your Class</legend>
+            <input class="input_class" id="power" type="text" placeholder="Select Your Ability" list="abilities">
+            <datalist id="abilities">
+                <option value="Strenght"></option>
+                <option value="Magic"></option>
+                <option value="Stealth"></option>
+                <option value="Speed"></option>
+                <option value="Size"></option>
+            </datalist>
+            <h2 id="clase">Press Enter after choosing</h2>
+        </fieldset>
+
+        <fieldset class="field_three">
+            <legend>Create Your Account</legend>
+            <input class="input_account" id="inpKey" type="text" placeholder="Enter Account">
+            <input class="input_account" id="inpValue" type="password" placeholder="Enter Password">
+            <button type="button" id="btnInsert">Insert Data</button>
+            <button type="button" id="btnDelete">Delete Data</button>
+
+            <div id="lsOutput"></div>
+        </fieldset>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
