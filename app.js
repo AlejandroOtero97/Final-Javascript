@@ -2,9 +2,15 @@ const inpKey = document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
 const titulo = document.getElementById("clase");
+const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Alliance:"Imperial"};
+const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Alliance:"Republic"};
+const arrayAssassin = {hitpoints:"300",Mana:"500", Energy:"700",Strenght:"60",  Speed:"80%",Faith:"Low",   Dexterity:"100",Alliance:"Caotic"};
+const arrayScholar =  {hitpoints:"100",Mana:"1000",Energy:"350",Strenght:"20",  Speed:"40%",Faith:"High",  Dexterity:"35", Alliance:"Neutral"};
+const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  Speed:"55%",Faith:"None",  Dexterity:"40", Alliance:"Renegade"};
+const arrayClasses = [arrayWarrior,arrayMage,arrayAssassin,arrayScholar,arrayDeprived];
 
 const namesJson = {
-    "nombre1": "Raghat", 
+    "nombre1": "Raghat",
     "nombre2": "Uhmla",
     "nombre3": "Borto",
     "nombre4": "Rexxar",
@@ -18,7 +24,6 @@ $("#btnName").on("click", function names() {
     var index = Math.floor(Math.random() * properties.length);
     document.getElementById("mensaje").innerHTML = properties[index];
 });
-
 
 var imageArray = ["index1.png",
                  "index2.png",
@@ -108,36 +113,22 @@ function obtenerClasePorPrediccion(atributo){
     }
 }
 
-
-
-const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Alliance:"Imperial"};
-const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Alliance:"Republic"};
-const arrayAssassin = {hitpoints:"300",Mana:"500", Energy:"700",Strenght:"60",  Speed:"80%",Faith:"Low",   Dexterity:"100",Alliance:"Caotic"};
-const arrayScholar =  {hitpoints:"100",Mana:"1000",Energy:"350",Strenght:"20",  Speed:"40%",Faith:"High",  Dexterity:"35", Alliance:"Neutral"};
-const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  Speed:"55%",Faith:"None",  Dexterity:"40", Alliance:"Renegade"};
-
-const arrayClasses = [arrayWarrior,arrayMage,arrayAssassin,arrayScholar,arrayDeprived];
-
-
 function buildTable(index) {
     var columna1 = document.getElementById("main_stats");
     var columna2 = document.getElementById("secondary_stats")
 
     var data = arrayClasses[index];
 
-    let row = `
-                    <p>Hitpoint:${data.hitpoints}</p>
-                    <p>Mana:${data.Mana}</p>
-                    <p>Energy:${data.Energy}</p>
-                    <p>Strenght:${data.Strenght}</p>`;
-    let row2 =         
-                    `
-                    <p>Speed:${data.Speed}</p>
-                    <p>Faith:${data.Faith}</p>
-                    <p>Dexterity:${data.Dexterity}</p>
-                    <p>Alliance:${data.Alliance}</p>`;
+    let row  = `<p>Hitpoint:${data.hitpoints}</p>
+                <p>Mana:${data.Mana}</p>
+                <p>Energy:${data.Energy}</p>
+                <p>Strenght:${data.Strenght}</p>`;
+
+    let row2 = `<p>Speed:${data.Speed}</p>
+                <p>Faith:${data.Faith}</p>
+                <p>Dexterity:${data.Dexterity}</p>
+                <p>Alliance:${data.Alliance}</p>`;
 
     columna1.innerHTML = row;
-    columna2.innerHTML = row2;
-    
+    columna2.innerHTML = row2;  
 }

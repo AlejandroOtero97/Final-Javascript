@@ -47,18 +47,19 @@ body {
     width: 100%;
     line-height: 50px;
     display: flex;
-    font-size: 20px;
     margin-top: 15px;
     text-align: left;
     border: 5px solid rgba(255, 255, 255, 0.158);
+    inset: 1px 1px 150px black;
+    background-color: rgba(39, 39, 39, 0.651);
 }
 
 #main_stats{
-    width: 50%;
+    width: 45%;
 }
 
 #secondary_stats{
-    width: 50%;
+    width: 55%;
 }
 
 .field_two {
@@ -118,6 +119,9 @@ button {
 
 
 @media (max-width: 1000px){
+    body{
+        text-shadow: 1px 2.2px black;
+    }
     .container {
         max-width: 100%;
         display: grid;
@@ -136,14 +140,15 @@ button {
     .field_two{
         margin-bottom: 5%;
     }
-    .field_two h2{
-        font-size: 20px;
+    .field_two{
+        font-size: 16px;
+
     }
     .field_three{
         margin-bottom: 5%;
     }
     .stats_clase{
-        font-size: 14px;
+        font-size: 13px;
     }
     #lsOutput{
         margin-top: 10%;
