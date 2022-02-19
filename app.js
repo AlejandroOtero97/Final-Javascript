@@ -81,12 +81,15 @@ function obtenerClase(atributo){
 
 function obtenerClasePorAtributoExacto(atributo){
     if (atributo == "Strenght" || atributo == "Size"){
+        buildTable(0);
         return "Warrior";
     }
     else if (atributo == "Magic"){
+        buildTable(1);
         return "Mage";
     }
     else if (atributo == "Stealth" || atributo == "Speed"){
+        buildTable(2);
         return "Assassin";
     }
     else {
@@ -96,9 +99,45 @@ function obtenerClasePorAtributoExacto(atributo){
 
 function obtenerClasePorPrediccion(atributo){
     if (atributo.length > 10){
+        buildTable(3);
         return "Scholar";
     }
     else {
+        buildTable(4);
         return "Deprived";
     }
+}
+
+
+
+const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Alliance:"Imperial"};
+const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Alliance:"Republic"};
+const arrayAssassin = {hitpoints:"300",Mana:"500", Energy:"700",Strenght:"60",  Speed:"80%",Faith:"Low",   Dexterity:"100",Alliance:"Caotic"};
+const arrayScholar =  {hitpoints:"100",Mana:"1000",Energy:"350",Strenght:"20",  Speed:"40%",Faith:"High",  Dexterity:"35", Alliance:"Neutral"};
+const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  Speed:"55%",Faith:"None",  Dexterity:"40", Alliance:"Renegade"};
+
+const arrayClasses = [arrayWarrior,arrayMage,arrayAssassin,arrayScholar,arrayDeprived];
+
+
+function buildTable(index) {
+    var columna1 = document.getElementById("main_stats");
+    var columna2 = document.getElementById("secondary_stats")
+
+    var data = arrayClasses[index];
+
+    let row = `
+                    <p>Hitpoint:${data.hitpoints}</p>
+                    <p>Mana:${data.Mana}</p>
+                    <p>Energy:${data.Energy}</p>
+                    <p>Strenght:${data.Strenght}</p>`;
+    let row2 =         
+                    `
+                    <p>Speed:${data.Speed}</p>
+                    <p>Faith:${data.Faith}</p>
+                    <p>Dexterity:${data.Dexterity}</p>
+                    <p>Alliance:${data.Alliance}</p>`;
+
+    columna1.innerHTML = row;
+    columna2.innerHTML = row2;
+    
 }
