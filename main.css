@@ -10,8 +10,9 @@ body {
     color: white;
     text-align: center;
     text-shadow: 2px 5px black;
-    background: url("https://cdn.hipwallpaper.com/i/6/72/unw8Tx.png");
+    background: url("https://wallpapercave.com/wp/wp4363074.jpg");
     background-position: center;
+    background-size: cover;
 }
 
 .container {
