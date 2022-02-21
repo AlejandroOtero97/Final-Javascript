@@ -52,6 +52,7 @@ $(()=>{
     $("#btnDelete").click(()=>{
         localStorage.clear();
         location.reload();
+        document.getElementById("inpKey").value = "";
     });
 
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
@@ -79,29 +80,29 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 function validate(){
     let valorClase = document.getElementById("power").value;
-    let claseObtenida = obtenerClase(valorClase);
+    let claseObtenida = obtainClass(valorClase);
     document.getElementById("clase").innerText= claseObtenida;
 }
 
-function obtenerClase(atributo){
-    let clase = obtenerClasePorAtributoExacto(atributo);
+function obtainClass(attribute){
+    let clase = obtainExactClass(attribute);
     if(clase == null){
-        clase = obtenerClasePorPrediccion(atributo);
+        clase = obtainPredictionClass(attribute);
     }
     return clase;
 }
 
-function obtenerClasePorAtributoExacto(atributo){
-    if (atributo == "Strenght" || atributo == "Size"){
-        buildTable(0);
+function obtainExactClass(attribute){
+    if (attribute == "Strenght" || attribute == "Size"){
+        showStats(0);
         return "Warrior";
     }
-    else if (atributo == "Magic"){
-        buildTable(1);
+    else if (attribute == "Magic"){
+        showStats(1);
         return "Mage";
     }
-    else if (atributo == "Stealth" || atributo == "Speed"){
-        buildTable(2);
+    else if (attribute == "Stealth" || attribute == "Speed"){
+        showStats(2);
         return "Assassin";
     }
     else {
@@ -109,20 +110,20 @@ function obtenerClasePorAtributoExacto(atributo){
     }
 }
 
-function obtenerClasePorPrediccion(atributo){
-    if (atributo.length > 10){
-        buildTable(3);
+function obtainPredictionClass(attribute){
+    if (attribute.length > 10){
+        showStats(3);
         return "Scholar";
     }
     else {
-        buildTable(4);
+        showStats(4);
         return "Deprived";
     }
 }
 
-function buildTable(index) {
-    let columna1 = document.getElementById("main_stats");
-    let columna2 = document.getElementById("secondary_stats")
+function showStats(index) {
+    let column1 = document.getElementById("main_stats");
+    let column2 = document.getElementById("secondary_stats")
     let data = arrayClasses[index];
     let row  = `<p>Hitpoint:${data.hitpoints}</p>
                 <p>Mana:${data.Mana}</p>
@@ -132,6 +133,6 @@ function buildTable(index) {
                 <p>Faith:${data.Faith}</p>
                 <p>Dexterity:${data.Dexterity}</p>
                 <p>Alliance:${data.Alliance}</p>`;
-    columna1.innerHTML = row;
-    columna2.innerHTML = row2;  
+    column1.innerHTML = row;
+    column2.innerHTML = row2;  
 }

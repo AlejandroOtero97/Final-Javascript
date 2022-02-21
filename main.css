@@ -21,10 +21,10 @@ body {
     grid-template-columns: auto 25% 25%;
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-areas: 
-        "fieldset1 fieldset1 fieldset2 fieldset2"
-        "fieldset1 fieldset1 fieldset2 fieldset2"
         "fieldset1 fieldset1 fieldset3 fieldset3"
-        "stats stats fieldset3 fieldset3"
+        "fieldset1 fieldset1 fieldset3 fieldset3"
+        "fieldset1 fieldset1 fieldset4 fieldset4"
+        "fieldset2 fieldset2 fieldset4 fieldset4"
     ;
 }
 
@@ -36,14 +36,21 @@ body {
     border: 5px solid rgb(255, 255, 255);
 }
 
-.stats{
-    grid-area: stats;
+.field_two{
+    grid-area: fieldset2;
     margin: 1%;
     background-color: #267b81a1;
     border: 5px solid rgb(255, 255, 255);
 }
 
-.stats_clase {
+.field_three {
+    margin: 1%;
+    grid-area: fieldset3;
+    background-color: #c4be22a1;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.field_three_stats {
     display: flex;
     line-height: 50px;
     margin-top: 10px;
@@ -52,16 +59,9 @@ body {
     background-color: rgba(39, 39, 39, 0.651);
 }
 
-.field_two {
+.field_four {
     margin: 1%;
-    grid-area: fieldset2;
-    background-color: #c4be22a1;
-    border: 5px solid rgb(255, 255, 255);
-}
-
-.field_three {
-    margin: 1%;
-    grid-area: fieldset3;
+    grid-area: fieldset4;
     background-color: #4a9428a1;
     border: 5px solid rgb(255, 255, 255);
 
@@ -127,26 +127,26 @@ button {
         grid-template-rows: auto;
         grid-template-areas: 
             "fieldset1 "
-            "stats "
-            "fieldset2"
-            "fieldset3 "
+            "fieldset2 "
+            "fieldset3"
+            "fieldset4"
         ;
     }
     .field_one{
         margin-bottom: 5%;
     }
-    .field_two{
-        margin-bottom: 5%;
-    }
-    .field_two{
-        font-size: 16px;
-
-    }
     .field_three{
         margin-bottom: 5%;
+        font-size: 16px;
     }
-    .stats_clase{
+    .field_three_stats{
         font-size: 13px;
+    }
+    .field_four{
+        margin-bottom: 5%;
+    }
+    .input_class{
+        width: 80%;
     }
     #lsOutput{
         margin-top: 10%;
