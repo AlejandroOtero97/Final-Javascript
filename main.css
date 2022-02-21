@@ -52,14 +52,6 @@ body {
     background-color: rgba(39, 39, 39, 0.651);
 }
 
-#main_stats{
-    width: 45%;
-}
-
-#secondary_stats{
-    width: 55%;
-}
-
 .field_two {
     margin: 1%;
     grid-area: fieldset2;
@@ -100,9 +92,17 @@ body {
     width: 70%;
 }
 
-#mensaje {
+#message {
     margin-top: 2%;
     font-size: 30px;
+}
+
+#main_stats{
+    width: 45%;
+}
+
+#secondary_stats{
+    width: 55%;
 }
 
 button {

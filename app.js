@@ -32,7 +32,7 @@ $(()=>{
     $("#btnName").click(function names() {
         let properties = Object.values(namesJson);
         let index = Math.floor(Math.random() * properties.length);
-        document.getElementById("mensaje").innerHTML = properties[index];
+        document.getElementById("message").innerHTML = properties[index];
     });
 
     $("#btnImage").click(function image() {
@@ -53,8 +53,10 @@ $(()=>{
         localStorage.clear();
         location.reload();
     });
-})
 
+    $("#power").on("focus",()=>{document.getElementById("power").value = "";});
+    $("#inpKey").on("focus",()=>{document.getElementById("inpKey").value = "";});
+})
 
 for(let i = 0;(i<3 && i < localStorage.length); i++){
     const key = localStorage.key(i);
