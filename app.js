@@ -3,11 +3,11 @@ const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
 const titulo = document.getElementById("clase");
 
-const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Alliance:"Imperial"};
-const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Alliance:"Republic"};
-const arrayAssassin = {hitpoints:"300",Mana:"500", Energy:"700",Strenght:"60",  Speed:"80%",Faith:"Low",   Dexterity:"100",Alliance:"Caotic"};
-const arrayScholar =  {hitpoints:"100",Mana:"1000",Energy:"350",Strenght:"20",  Speed:"40%",Faith:"High",  Dexterity:"35", Alliance:"Neutral"};
-const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  Speed:"55%",Faith:"None",  Dexterity:"40", Alliance:"Renegade"};
+const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Pact:"Imperial"};
+const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Pact:"Republic"};
+const arrayAssassin = {hitpoints:"300",Mana:"500", Energy:"700",Strenght:"60",  Speed:"80%",Faith:"Low",   Dexterity:"100",Pact:"Caotic"};
+const arrayScholar =  {hitpoints:"100",Mana:"1000",Energy:"350",Strenght:"20",  Speed:"40%",Faith:"High",  Dexterity:"35", Pact:"Neutral"};
+const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  Speed:"55%",Faith:"None",  Dexterity:"40", Pact:"Renegade"};
 
 const arrayClasses = [arrayWarrior,arrayMage,arrayAssassin,arrayScholar,arrayDeprived];
 
@@ -132,7 +132,7 @@ function showStats(index) {
     let row2 = `<p>Speed:${data.Speed}</p>
                 <p>Faith:${data.Faith}</p>
                 <p>Dexterity:${data.Dexterity}</p>
-                <p>Alliance:${data.Alliance}</p>`;
+                <p>Pact:${data.Pact}</p>`;
     column1.innerHTML = row;
     column2.innerHTML = row2;  
 }

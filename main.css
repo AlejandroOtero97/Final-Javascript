@@ -33,21 +33,18 @@ body {
     margin: 1%;
     grid-area: fieldset1;
     background-color: #686747a1;
-    border: 5px solid rgb(255, 255, 255);
 }
 
 .field_two{
     grid-area: fieldset2;
     margin: 1%;
     background-color: #267b81a1;
-    border: 5px solid rgb(255, 255, 255);
 }
 
 .field_three {
     margin: 1%;
     grid-area: fieldset3;
     background-color: #c4be22a1;
-    border: 5px solid rgb(255, 255, 255);
 }
 
 .field_three_stats {
@@ -55,16 +52,12 @@ body {
     line-height: 50px;
     margin-top: 10px;
     text-align: left;
-    border: 5px solid rgba(255, 255, 255, 0.158);
-    background-color: rgba(39, 39, 39, 0.651);
 }
 
 .field_four {
     margin: 1%;
     grid-area: fieldset4;
     background-color: #4a9428a1;
-    border: 5px solid rgb(255, 255, 255);
-
 }
 
 .input_class{
@@ -105,6 +98,11 @@ body {
     width: 55%;
 }
 
+fieldset {
+    border: 5px solid rgb(255, 255, 255);
+    border-style: double;
+}
+
 button {
     margin: 3%;
     border: 3px solid black;
@@ -129,8 +127,7 @@ button {
             "fieldset1 "
             "fieldset2 "
             "fieldset3"
-            "fieldset4"
-        ;
+            "fieldset4";
     }
     .field_one{
         margin-bottom: 5%;
@@ -160,6 +157,9 @@ button {
         margin-top: 2%;
         font-size: 20px;
     }
+    #secondary_stats{
+        margin-left: 10px;
+    }
     button {
         margin: 1%;
         border: 1px solid black;
@@ -168,8 +168,5 @@ button {
         border-radius: 10px;
         font-size: 10px;
         margin-top: 2%;
-    }
-    legend{
-        font-size: 20px;
     }
 }
