@@ -28,6 +28,12 @@ const imageArray = ["./image/index1.png",
                     "./image/index5.png",
                     "./image/index6.png"];
 
+
+const API_URL = "http://hp-api.herokuapp.com/api/characters";
+
+const HTMLResponse = document.querySelector("#app");
+
+
 $(()=>{
     $("#btnName").click(function names() {
         let properties = Object.values(namesJson);

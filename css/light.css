@@ -11,19 +11,56 @@ fieldset {
     background-color: #969696a1;
 }
 
-button {
-    margin: 3%;
-    padding: 2%;
-    border-radius: 10px;
-    font-size: 15px;
-    color: rgb(0, 119, 119);
-    border: 3px solid rgb(3, 255, 255);
-    box-shadow: 5px 10px rgb(0, 153, 153);
-    
+.button{
+    position:relative;
+    display:inline-block;
+    margin:20px;
 }
 
-@media (max-width: 1000px){
-    button{
-        padding: 4%;
-    }
+.button a{
+    color:rgb(1, 255, 255);
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#ffffff;
+    display:block;
+    position:relative;
+    padding:10px 25px;
+    
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #00b1b1;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.button a:active{
+    top:10px;
+    background-color:#e7e7e7;
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #007268;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #007268;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #007268;
+}
+
+.button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
