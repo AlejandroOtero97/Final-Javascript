@@ -1,18 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
-}
-
-body {
-    color: white;
-    text-align: center;
-    text-shadow: 2px 5px black;
-    background: url("https://wallpapercave.com/wp/wp4363074.jpg");
-    background-position: center;
-    background-size: cover;
 }
 
 .container {
@@ -29,23 +20,39 @@ body {
     ;
 }
 
-.field_one{
-    padding: 1%;
-    margin: 1%;
-    grid-area: fieldset1;
-    background-color: #686747a1;
+.container_animations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.field_two{
+.field_one {
+    grid-area: fieldset1;
+}
+
+.field_two {
     grid-area: fieldset2;
-    margin: 1%;
-    background-color: #267b81a1;
 }
 
 .field_three {
-    margin: 1%;
     grid-area: fieldset3;
-    background-color: #c4be22a1;
+}
+
+.field_four {
+    grid-area: fieldset4;
+}
+
+.container1{
+    width: 33%;
+}
+
+.container2{
+    width: 33%;
+}
+
+.container3{
+    width: 33%;
 }
 
 .field_three_stats {
@@ -57,13 +64,7 @@ body {
     border: 3px solid rgba(128, 128, 128, 0.479);
 }
 
-.field_four {
-    margin: 1%;
-    grid-area: fieldset4;
-    background-color: #4a9428a1;
-}
-
-.input_class{
+.input_class {
     margin: 25px;
     width: 50%;
     padding: 15px;
@@ -73,7 +74,7 @@ body {
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
-.input_account{
+.input_account {
     position: relative;
     margin: 30px;
     padding: 15px;
@@ -81,6 +82,65 @@ body {
     outline: none;
     border-width: 1px;
     box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 #mainImage{
@@ -104,23 +164,10 @@ body {
 fieldset {
     border: 5px solid rgb(255, 255, 255);
     border-style: double;
+    margin: 1%;
 }
-
-button {
-    margin: 3%;
-    border: 3px solid black;
-    padding: 20px;
-    box-shadow: 5px 10px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-top: 2%;
-}
-
 
 @media (max-width: 1000px){
-    body{
-        text-shadow: 1px 2.2px black;
-    }
     .container {
         max-width: 100%;
         display: grid;
@@ -132,18 +179,27 @@ button {
             "fieldset3"
             "fieldset4";
     }
-    .field_one{
+    .container_animations{
+        display: block;
+    }
+    .margin{
+        margin-top: 5%;
         margin-bottom: 5%;
     }
-    .field_three{
-        margin-bottom: 5%;
-        font-size: 16px;
+    .field_one{
+        height: 500px;
     }
     .field_three_stats{
         font-size: 13px;
     }
-    .field_four{
-        margin-bottom: 5%;
+    .container1{
+        width: 100%;
+    }
+    .container2{
+        width: 100%;
+    }
+    .container3{
+        width: 100%;
     }
     .input_class{
         width: 80%;
@@ -162,14 +218,5 @@ button {
     }
     #secondary_stats{
         margin-left: 10px;
-    }
-    button {
-        margin: 1%;
-        border: 1px solid black;
-        padding: 10px;
-        box-shadow: 2px 5px;
-        border-radius: 10px;
-        font-size: 10px;
-        margin-top: 2%;
     }
 }

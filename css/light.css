@@ -1,0 +1,29 @@
+body {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 5px black;
+    background-image: url("../image/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+fieldset {
+    background-color: #969696a1;
+}
+
+button {
+    margin: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(0, 119, 119);
+    border: 3px solid rgb(3, 255, 255);
+    box-shadow: 5px 10px rgb(0, 153, 153);
+    
+}
+
+@media (max-width: 1000px){
+    button{
+        padding: 4%;
+    }
+}

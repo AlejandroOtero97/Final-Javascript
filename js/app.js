@@ -21,12 +21,12 @@ const namesJson = {
     "nombre7": "Pocho'Feo"
 };
 
-const imageArray = ["index1.png",
-                    "index2.png",
-                    "index3.png",
-                    "index4.png",
-                    "index5.png",
-                    "index6.png"];
+const imageArray = ["./image/index1.png",
+                    "./image/index2.png",
+                    "./image/index3.png",
+                    "./image/index4.png",
+                    "./image/index5.png",
+                    "./image/index6.png"];
 
 $(()=>{
     $("#btnName").click(function names() {
@@ -53,6 +53,14 @@ $(()=>{
         localStorage.clear();
         location.reload();
         document.getElementById("inpKey").value = "";
+    });
+
+    $(".checkbox").click(function () { 
+        if($("input.checkbox").is(":checked")){
+            $(".theme").attr("href", "./css/dark.css");
+        }else{
+            $(".theme").attr("href", "./css/light.css");
+        }
     });
 
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});

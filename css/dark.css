@@ -1,0 +1,28 @@
+body {
+    color: rgb(248, 2, 2);
+    text-align: center;
+    text-shadow: 1px 3px rgb(46, 46, 46);
+    background: url("../image/night.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+fieldset {
+    background-color: #202020c7;
+}
+
+button {
+    margin: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 15px;
+    color: red;
+    border: 3px solid rgb(255, 4, 4);
+    box-shadow: 5px 10px rgb(139, 0, 0);
+}
+
+@media (max-width: 1000px){
+    button{
+        padding: 4%;
+    }
+}
