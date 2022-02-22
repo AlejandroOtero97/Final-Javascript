@@ -69,6 +69,10 @@ $(()=>{
         }
     });
 
+    $(".check_secret").click(function () { 
+        $("#hidden").toggle();
+    });
+
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
     $("#inpKey").on("focus",()=>{document.getElementById("inpKey").value = "";});
 })

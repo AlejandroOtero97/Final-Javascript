@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f40d67fda1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/dark.css">
     <link rel="stylesheet" href="./css/light.css" class="theme">
@@ -13,7 +14,7 @@
 
     <div class="container">
         <fieldset class="field_one">
-            <legend>Character Creation</legend>
+            <legend>Character Creation <i class="fa-solid fa-signs-post"></i></legend>
             <div id="message">...............</div>
             <img src="./image/index1.png" id="mainImage" alt="">
             <div class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
@@ -21,16 +22,26 @@
         </fieldset>
 
         <fieldset class="field_two">
-            <legend>Animations</legend>
-            <h2>darkmode</h2>
-            <label class="switch">
-                <input type="checkbox" class="checkbox">
-                <span class="slider round"></span>
-            </label>
+            <legend>Animations <i class="fa-brands fa-bilibili"></i></legend>
+            <div class="darkmode">
+                <h2>DarkMode</h2>
+                <label class="switch">
+                    <input type="checkbox" class="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            
+            <div class="secretmode">
+                <h2>Secret Classes</h2>
+                <label class="switch">
+                    <input type="checkbox" class="check_secret">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </fieldset>
 
         <fieldset class="field_three">
-            <legend>Choose Your Class</legend>
+            <legend>Choose Your Class <i class="fa-solid fa-bolt-lightning"></i></legend>
             <input class="input_class" id="power" type="text" placeholder="Select Your Ability" list="abilities">
             <datalist id="abilities">
                 <option value="Strenght"></option>
@@ -55,10 +66,23 @@
                     <p>Pact:</p>
                 </div>
             </div>
+            <div id="hidden">
+                <h3 id="hidden_class">
+                    <i class="fa-regular fa-star"></i>
+                    Type more than 10 letters to get Scholar
+                    <i class="fa-regular fa-star"></i></h3>
+
+                <h3 id="hidden_class">
+                    <i class="fa-regular fa-star"></i>
+                    Type nothing to get Deprived
+                    <i class="fa-regular fa-star"></i>
+                </h3>
+            </div>
+            
         </fieldset>
 
         <fieldset class="field_four">
-            <legend>Create Your Account</legend>
+            <legend>Create Your Account <i class="fa-solid fa-wand-magic-sparkles"></i></legend>
             <input class="input_account" id="inpKey" type="text" placeholder="Enter Account">
             <input class="input_account" id="inpValue" type="password" placeholder="Enter Password">
             <div class="button"><a href="#" id="btnInsert">Insert Data</a></div>

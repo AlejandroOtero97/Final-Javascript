@@ -11,13 +11,13 @@ fieldset {
     background-color: #202020c7;
 }
 
-.button{
+.button {
     position:relative;
     display:inline-block;
     margin:20px;
 }
 
-.button a{
+.button a {
     color:rgb(255, 1, 1);
     font-family:Helvetica, sans-serif;
     font-weight:bold;
@@ -41,7 +41,7 @@ fieldset {
     border-radius: 5px;
 }
 
-.button a:active{
+.button a:active {
     top:10px;
     background-color:#464646;
     
@@ -50,7 +50,7 @@ fieldset {
     box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #850000;
 }
 
-.button:after{
+.button:after {
     content:"";
     height:100%;
     width:100%;

@@ -120,7 +120,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-#mainImage{
+#mainImage {
     height: 70%;
     width: 70%;
 }
@@ -130,22 +130,43 @@ input:checked + .slider:before {
     font-size: 30px;
 }
 
-#main_stats{
+#main_stats {
     width: 45%;
 }
 
-#secondary_stats{
+#secondary_stats {
     width: 55%;
 }
 
-#app{
-    height: 100%;
+#hidden {
+    margin: 1.5%;
+    display: none;
+    color: gold;
+    text-shadow: 1px 2px rgb(61, 61, 61);
+}
+
+#lsOutput{
+    text-transform: uppercase;
 }
 
 fieldset {
     border: 5px solid rgb(255, 255, 255);
     border-style: double;
     margin: 1%;
+}
+
+i{
+    font-size: 20px;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0%   {color:red;}
+    25%  {color:blue;}
+    50%  {color:gold;}
+    75%  {color:greenyellow;}
+    100% {color:red;}
 }
 
 @media (max-width: 1000px){
@@ -168,7 +189,7 @@ fieldset {
         margin-bottom: 5%;
     }
     .field_one{
-        height: 600px;
+        height: 550px;
     }
     .field_three_stats{
         font-size: 13px;
@@ -181,8 +202,8 @@ fieldset {
         margin-bottom: 10%;
     }
     #mainImage{
-        height: 60%;
-        width: 70%;
+        height: 55%;
+        width: 80%;
     }
     #message {
         margin-top: 2%;
@@ -190,5 +211,9 @@ fieldset {
     }
     #secondary_stats{
         margin-left: 10px;
+    }
+    #hidden {
+        margin-top: 3%;
+        margin-bottom: 3%;
     }
 }
