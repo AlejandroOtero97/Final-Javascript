@@ -61,7 +61,7 @@ $(()=>{
         document.getElementById("inpKey").value = "";
     });
 
-    $(".checkbox").click(function () { 
+    $(".checkbox").click(()=>{ 
         if($("input.checkbox").is(":checked")){
             $(".theme").attr("href", "./css/dark.css");
         }else{
@@ -69,7 +69,7 @@ $(()=>{
         }
     });
 
-    $(".check_secret").click(function () { 
+    $(".check_secret").click(()=>{ 
         $("#hidden").toggle();
     });
 
