@@ -18,7 +18,7 @@ fieldset {
 }
 
 .button a {
-    color:rgb(1, 255, 255);
+    color:rgb(0, 136, 136);
     font-family:Helvetica, sans-serif;
     font-weight:bold;
     font-size:20px;
@@ -34,7 +34,7 @@ fieldset {
     
     -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
     -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
-    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #00b1b1;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #00a1a1;
     
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

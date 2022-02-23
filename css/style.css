@@ -197,36 +197,36 @@ i{
             "fieldset3"
             "fieldset4";
     }
-    .containerflex{
+    .containerflex {
         display: block;
     }
-    .darkmode{
-        display: inline;
+    .darkmode {
+        width: 100%;
     }
-    .secretmode{
-        display: inline;
+    .secretmode {
+        width: 100%;
     }
-    .animate{
-        display: inline;
+    .animate {
+        width: 100%;
     }
-    .margin{
+    .margin {
         margin-top: 5%;
         margin-bottom: 5%;
     }
     .field_one{
         height: 550px;
     }
-    .field_three_stats{
+    .field_three_stats {
         font-size: 13px;
     }
-    .input_class{
+    .input_class {
         width: 80%;
     }
-    #lsOutput{
+    #lsOutput {
         margin-top: 10%;
         margin-bottom: 10%;
     }
-    #mainImage{
+    #mainImage {
         height: 55%;
         width: 80%;
     }
@@ -234,7 +234,7 @@ i{
         margin-top: 2%;
         font-size: 20px;
     }
-    #secondary_stats{
+    #secondary_stats {
         margin-left: 10px;
     }
     #hidden {
