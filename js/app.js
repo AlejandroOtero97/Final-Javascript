@@ -1,7 +1,8 @@
 const inpKey = document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
-const titulo = document.getElementById("clase");
+const title = document.getElementById("clase");
+const secret = document.getElementById("hidden");
 
 const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Pact:"Imperial"};
 const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Pact:"Republic"};
@@ -89,11 +90,17 @@ if($("input.checkbox").is(":checked")){
     $(".theme").attr("href", "./css/light.css");
 }
 
+if($(".check_secret").is(":checked")){
+    $("#hidden").show();
+}else{
+    $("#hidden").hide();
+}
+
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     $("#power").blur(()=>{ 
         validate();
     });
-    titulo.textContent = "Selecciona tu clase!";
+    title.textContent = "Selecciona tu clase!";
 }else{
     $("#power").keydown((e)=>{
         if (e.key === "Enter") {  
