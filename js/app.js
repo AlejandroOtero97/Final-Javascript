@@ -83,6 +83,12 @@ for(let i = 0;(i<3 && i < localStorage.length); i++){
     lsOutput.innerHTML += `${key}: ${value} <br/>`;
 }
 
+if($("input.checkbox").is(":checked")){
+    $(".theme").attr("href", "./css/dark.css");
+}else{
+    $(".theme").attr("href", "./css/light.css");
+}
+
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     $("#power").blur(()=>{ 
         validate();

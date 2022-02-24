@@ -186,6 +186,10 @@ i{
 }
 
 @media (max-width: 1000px){
+
+
+
+
     .container {
         max-width: 100%;
         display: grid;
