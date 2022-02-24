@@ -1,8 +1,8 @@
-const inpKey = document.getElementById("inpKey");
+const inpKey =   document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
-const title = document.getElementById("clase");
-const secret = document.getElementById("hidden");
+const title =    document.getElementById("clase");
+const secret =   document.getElementById("hidden");
 
 const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Pact:"Imperial"};
 const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Pact:"Republic"};
@@ -28,12 +28,6 @@ const imageArray = ["./image/index1.png",
                     "./image/index4.png",
                     "./image/index5.png",
                     "./image/index6.png"];
-
-
-const API_URL = "http://hp-api.herokuapp.com/api/characters";
-
-const HTMLResponse = document.querySelector("#app");
-
 
 $(()=>{
     $("#btnName").click(function names() {
