@@ -71,7 +71,7 @@ $(()=>{
     });
 
     $(".check_secret").click(()=>{ 
-        $("#hidden").toggle();
+        $("#hidden").slideToggle();
     });
 
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
