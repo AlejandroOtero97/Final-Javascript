@@ -94,7 +94,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     $("#power").blur(()=>{ 
         validate();
     });
-    title.textContent = "Selecciona tu clase!";
+    title.textContent = "Select Your Class!";
 }else{
     $("#power").keydown((e)=>{
         if (e.key === "Enter") {  
