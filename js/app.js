@@ -68,6 +68,13 @@ $(()=>{
         $("#hidden").slideToggle();
     });
 
+    $("fieldset").hover(function () {
+            $(this).addClass("rainbowAnim");
+        }, function () {
+            $(this).removeClass("rainbowAnim");
+        }
+    );
+
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
     $("#inpKey").on("focus",()=>{document.getElementById("inpKey").value = "";});
 })
@@ -89,6 +96,7 @@ if($(".check_secret").is(":checked")){
 }else{
     $("#hidden").hide();
 }
+
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     $("#power").blur(()=>{ 

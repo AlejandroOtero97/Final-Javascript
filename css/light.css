@@ -1,7 +1,7 @@
 body {
     color: white;
     text-align: center;
-    text-shadow: 2px 5px black;
+    text-shadow: 1.5px 3px black;
     background-image: url("../image/background.jpg");
     background-position: center;
     background-size: cover;
