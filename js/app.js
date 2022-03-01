@@ -1,3 +1,5 @@
+//Variables constantes
+
 const inpKey =   document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
@@ -77,9 +79,22 @@ $(()=>{
 
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
     $("#inpKey").on("focus",()=>{document.getElementById("inpKey").value = "";});
+
+    let ajax = new XMLHttpRequest();
+    ajax.open("GET",`https://www.dnd5eapi.co/api/magic-items`);
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if(this.readyState == 4 && this.status == 200){
+            let tmp = JSON.parse(this.responseText);
+            let datos = (tmp.results);
+            for(let i = 0;(i < 6 && i < datos.length); i++){
+                $("#items").append(`<option value="${datos[i].name}">${datos[i].name}</option>`);
+            }
+        }
+    }
 })
 
-for(let i = 0;(i<3 && i < localStorage.length); i++){
+for(let i = 0;(i<1 && i < localStorage.length); i++){
     const key = localStorage.key(i);
     const value = localStorage.getItem(key);
     lsOutput.innerHTML += `${key}: ${value} <br/>`;
@@ -103,11 +118,14 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         validate();
     });
     title.textContent = "Select Your Class!";
-}else{
+}else {
     $("#power").keydown((e)=>{
         if (e.key === "Enter") {  
             validate(e);
         }
+    });
+    $("#power").on("change",(e)=>{
+        validate(e);
     });
 }
 

@@ -10,13 +10,13 @@
     max-width: 100%;
     height: 98vh;
     display: grid;
-    grid-template-columns: auto 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 20% 30%;
     grid-template-areas: 
         "fieldset1 fieldset1 fieldset3 fieldset3"
         "fieldset1 fieldset1 fieldset3 fieldset3"
-        "fieldset1 fieldset1 fieldset4 fieldset4"
-        "fieldset2 fieldset2 fieldset4 fieldset4"
+        "fieldset1 fieldset1 fieldset3 fieldset3"
+        "fieldset2 fieldset5 fieldset4 fieldset4"
     ;
 }
 
@@ -34,6 +34,10 @@
 
 .field_four {
     grid-area: fieldset4;
+}
+
+.field_extra{
+    grid-area: fieldset5;
 }
 
 .field_three_stats {
@@ -133,6 +137,13 @@ input:checked + .slider:before {
     width: 50%;
 }
 
+.magic_item{
+    margin-top: 2%;
+}
+
+.rainbowAnim{
+    animation: rainbow 5s linear;
+}
 
 #mainImage {
     height: 70%;
@@ -175,16 +186,20 @@ i{
     animation: rainbow 5s linear infinite;
 }
 
-.rainbowAnim{
-    animation: rainbow 5s linear;
+select {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    border-radius: 0px;
+    width: 50%;
 }
 
 @keyframes rainbow {
-    0%   {color:red;}
-    25%  {color:blue;}
+    0%   {color:lightcoral;}
+    25%  {color:lightskyblue;}
     50%  {color:gold;}
     75%  {color:greenyellow;}
-    100% {color:red;}
+    100% {color:lightcoral;}
 }
 
 @media (max-width: 1000px){
@@ -194,8 +209,9 @@ i{
         grid-template-columns: 100%;
         grid-template-rows: auto;
         grid-template-areas: 
-            "fieldset1 "
-            "fieldset2 "
+            "fieldset1"
+            "fieldset2"
+            "fieldset5"
             "fieldset3"
             "fieldset4";
     }
@@ -242,5 +258,8 @@ i{
     #hidden {
         margin-top: 3%;
         margin-bottom: 3%;
+    }
+    select {
+        width: 80%;
     }
 }

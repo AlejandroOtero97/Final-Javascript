@@ -14,7 +14,7 @@
 
     <div class="container">
         <fieldset class="field_one">
-            <legend>Character Creation <i class="fa-solid fa-signs-post"></i></legend>
+            <legend>Character Creation <i class="fa-solid fa-ghost"></i></legend>
             <div id="message">...............</div>
             <img src="./image/index1.png" id="mainImage" alt="">
             <div class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
@@ -25,20 +25,25 @@
             <legend>Animations <i class="fa-brands fa-bilibili"></i></legend>
             <div class="containerflex">
                 <div class="darkmode margin">
-                    <h2>DarkMode</h2>
+                    <h3>DarkMode</h3>
                     <label class="switch">
                         <input type="checkbox" class="checkbox">
                         <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="secretmode margin">
-                    <h2>Secret Classes</h2>
+                    <h3>Secret Classes</h3>
                     <label class="switch">
                         <input type="checkbox" class="check_secret">
                         <span class="slider round"></span>
                     </label>
                 </div>
             </div>
+        </fieldset>
+
+        <fieldset class="field_extra">
+            <legend>Level & Exp <i class="fa-solid fa-dungeon"></i></legend>
+
         </fieldset>
 
         <fieldset class="field_three">
@@ -67,6 +72,10 @@
                     <p>Pact:</p>
                 </div>
             </div>
+            <div class="magic_item"></div>
+            <h2>Choose Your Magic Item</h2>
+            <select id="items">Test Dropdown</select>
+
             <div id="hidden">
                 <h3 id="hidden_class">
                     <i class="fa-regular fa-star"></i>
