@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f40d67fda1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/dark.css">
-    <link rel="stylesheet" href="./css/light.css" class="theme">
     <title>CharacterCreation</title>
 </head>
 <body>
@@ -17,17 +15,19 @@
             <legend>Character Creation <i class="fa-solid fa-ghost"></i></legend>
             <div id="message">...............</div>
             <img src="./image/index1.png" id="mainImage" alt="">
-            <div class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
-            <div class="button"><a href="#" id="btnName">¡Generate Nickname!</a></div>
+            <div>
+                <div id="butt" class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
+                <div id="butt" class="button"><a href="#" id="btnName">¡Generate Nickname!</a></div>
+            </div>
         </fieldset>
 
         <fieldset class="field_two">
             <legend>Animations <i class="fa-brands fa-bilibili"></i></legend>
             <div class="containerflex">
-                <div class="darkmode margin">
+                <div class="margin">
                     <h3>DarkMode</h3>
                     <label class="switch">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" id="dark_mode_toggle">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -43,7 +43,9 @@
 
         <fieldset class="field_extra">
             <legend>Level & Exp <i class="fa-solid fa-dungeon"></i></legend>
-
+            <p>Level: </p><input type="text" id="level">
+            <p>Experience: </p><input type="text" id="exp">
+            <h4 id="result">.................</h4>
         </fieldset>
 
         <fieldset class="field_three">
@@ -94,8 +96,10 @@
             <legend>Create Your Account <i class="fa-solid fa-wand-magic-sparkles"></i></legend>
             <input class="input_account" id="inpKey" type="text" placeholder="Enter Account">
             <input class="input_account" id="inpValue" type="password" placeholder="Enter Password">
-            <div class="button"><a href="#" id="btnInsert">Insert Data</a></div>
-            <div class="button"><a href="#" id="btnDelete">Delete Data</a></div>
+            <div class="linea">
+                <div class="button"><a class="anchor" href="#" id="btnInsert">Insert Data</a></div>
+                <div class="button"><a class="anchor" href="#" id="btnDelete">Delete Data</a></div>
+            </div>
             <div id="lsOutput"></div>
         </fieldset>
     </div>

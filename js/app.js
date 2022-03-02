@@ -1,5 +1,4 @@
 //Variables constantes
-
 const inpKey =   document.getElementById("inpKey");
 const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
@@ -14,6 +13,7 @@ const arrayDeprived = {hitpoints:"250",Mana:"750", Energy:"500",Strenght:"40",  
 
 const arrayClasses = [arrayWarrior,arrayMage,arrayAssassin,arrayScholar,arrayDeprived];
 
+//Nombres en formato JSON
 const namesJson = {
     "nombre1": "Raghat",
     "nombre2": "Uhmla",
@@ -24,6 +24,7 @@ const namesJson = {
     "nombre7": "Pocho'Feo"
 };
 
+//Array de imagenes para el avatar
 const imageArray = ["./image/index1.png",
                     "./image/index2.png",
                     "./image/index3.png",
@@ -31,45 +32,60 @@ const imageArray = ["./image/index1.png",
                     "./image/index5.png",
                     "./image/index6.png"];
 
+
+//Clase constructora
+class Character {
+    constructor(level, experience) {
+        this.level = Number(document.getElementById("level"));
+        this.experience = Number(document.getElementById("exp"));
+    }
+    calculate(){
+        let result = document.getElementById("result");
+        return result = this.level * this.experience;
+    }
+}
+
+calculate();
+
+
+//JQUERY READY con todas las funciones jquery del proyecto
 $(()=>{
+    //Boton para conseguir un nombre random del JSON nombres
     $("#btnName").click(function names() {
         let properties = Object.values(namesJson);
         let index = Math.floor(Math.random() * properties.length);
         document.getElementById("message").innerHTML = properties[index];
     });
 
+    //Boton para conseguir una imagen random del Array
     $("#btnImage").click(function image() {
         let randomNumber = Math.floor(Math.random()*imageArray.length);
         document.getElementById("mainImage").src = (imageArray[randomNumber]);
     });
     
+    //Boton para insertar daatos en el localstorage
     $("#btnInsert").click(()=>{
-        const key = inpKey.value;
-        const value = inpValue.value;
+        let key = inpKey.value;
+        let value = inpValue.value;
         if(key && value){
             localStorage.setItem(key, value);
             location.reload();
         }
     });
 
+    //Boton para borrar los datos y campos del localstorage
     $("#btnDelete").click(()=>{
         localStorage.clear();
         location.reload();
         document.getElementById("inpKey").value = "";
     });
 
-    $(".checkbox").click(()=>{ 
-        if($("input.checkbox").is(":checked")){
-            $(".theme").attr("href", "./css/dark.css");
-        }else{
-            $(".theme").attr("href", "./css/light.css");
-        }
-    });
-
+    //Efecto de slide para las clases secretas
     $(".check_secret").click(()=>{ 
         $("#hidden").slideToggle();
     });
 
+    //Efecto de hover para los fieldsets
     $("fieldset").hover(function () {
             $(this).addClass("rainbowAnim");
         }, function () {
@@ -77,9 +93,24 @@ $(()=>{
         }
     );
 
+    //darkmode hecho con cambio de clases
+    $("#dark_mode_toggle").click(()=>{ 
+        if($("#dark_mode_toggle").is(":checked")){
+            $("body").addClass("bodydark");
+            $("fieldset").addClass("fieldsetdark");
+            $("a").addClass("anchordark");
+        }else{
+            $("body").removeClass("bodydark");
+            $("fieldset").removeClass("fieldsetdark");
+            $("a").removeClass("anchordark");
+        }
+    });
+
+    //Funciones onFocus para el formato mobile
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
     $("#inpKey").on("focus",()=>{document.getElementById("inpKey").value = "";});
 
+    //AJAX y consumo de API
     let ajax = new XMLHttpRequest();
     ajax.open("GET",`https://www.dnd5eapi.co/api/magic-items`);
     ajax.send();
@@ -94,17 +125,17 @@ $(()=>{
     }
 })
 
-for(let i = 0;(i<1 && i < localStorage.length); i++){
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-    lsOutput.innerHTML += `${key}: ${value} <br/>`;
+//For para insertar los datos conseguidos del localstorage
+for(i = 0; i < localStorage.length; i++){
+    let key = localStorage.key(i);
+    if(showValidate(key)){
+        let value = localStorage.getItem(key);
+        lsOutput.innerHTML += `${key}: ${value} <br/>`;
+        break;
+    }
 }
 
-if($("input.checkbox").is(":checked")){
-    $(".theme").attr("href", "./css/dark.css");
-}else{
-    $(".theme").attr("href", "./css/light.css");
-}
+//If generales del proyecto (chequeo de mobile para inputs, darkmode check, clases ocultas)
 
 if($(".check_secret").is(":checked")){
     $("#hidden").show();
@@ -112,6 +143,15 @@ if($(".check_secret").is(":checked")){
     $("#hidden").hide();
 }
 
+if($("#dark_mode_toggle").is(":checked")){
+    $("body").addClass("bodydark");
+    $("fieldset").addClass("fieldsetdark");
+    $("a").addClass("anchordark");
+}else{
+    $("body").removeClass("bodydark");
+    $("fieldset").removeClass("fieldsetdark");
+    $("a").removeClass("anchordark");
+}
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     $("#power").blur(()=>{ 
@@ -129,6 +169,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     });
 }
 
+//Funciones del proyecto (validacion de clases, obtencion de clases de manera exacta y aproximada, muestra de estadisticas segun clase elegida)
 function validate(){
     let valorClase = document.getElementById("power").value;
     let claseObtenida = obtainClass(valorClase);
@@ -186,4 +227,11 @@ function showStats(index) {
                 <p>Pact:${data.Pact}</p>`;
     column1.innerHTML = row;
     column2.innerHTML = row2;  
+}
+
+function showValidate(key){
+    if(key == "darkMode"){
+        return false;
+    }
+    return true;
 }

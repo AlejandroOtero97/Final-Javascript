@@ -1,3 +1,4 @@
+/*-----------------RESET-----------------*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
     margin: 0;
@@ -6,6 +7,66 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+
+/*-----------------GENERAL TAG CHANGES START-----------------*/
+body {
+    color: white;
+    text-align: center;
+    text-shadow: 1.5px 3px black;
+    background-image: url("../image/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+fieldset {
+    border: 5px solid rgb(255, 255, 255);
+    border-style: double;
+    margin: 1%;
+    background-color: rgba(182, 182, 182, 0.623);
+}
+
+legend i{
+    font-size: 20px;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+h3 i{
+    animation: rainbow 5s linear infinite;
+}
+
+select {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    border-radius: 0px;
+    width: 50%;
+}
+a {
+    color:rgb(0, 136, 136);
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#ffffff;
+    display:block;
+    position:relative;
+    padding:10px 25px;
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #000000;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #00a1a1;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+h4 {
+    margin-top: 5%;
+}
+
+/*-----------------LAYOUT START-----------------*/
 .container {
     max-width: 100%;
     height: 98vh;
@@ -40,6 +101,8 @@
     grid-area: fieldset5;
 }
 
+
+/*-----------------GENERAL CLASS CHANGES START-----------------*/
 .field_three_stats {
     display: flex;
     line-height: 50px;
@@ -60,8 +123,9 @@
 }
 
 .input_account {
+    display: inline-block;
+    margin-top: 2%;
     position: relative;
-    margin: 30px;
     padding: 15px;
     border-radius: 10px;
     outline: none;
@@ -74,12 +138,6 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 .slider {
@@ -123,6 +181,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 .containerflex{
     display: flex;
     align-items: center;
@@ -130,9 +189,6 @@ input:checked + .slider:before {
     height: 100%;
 }
 
-.darkmode{
-    width: 50%;
-}
 .secretmode{
     width: 50%;
 }
@@ -145,6 +201,75 @@ input:checked + .slider:before {
     animation: rainbow 5s linear;
 }
 
+.bodydark {
+    color: rgb(248, 2, 2);
+    text-align: center;
+    text-shadow: 1px 3px rgb(46, 46, 46);
+    background: url("../image/night.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.fieldsetdark {
+    background-color: #202020c7;
+}
+
+.button {
+    position:relative;
+    display:inline-block;
+    margin: 20px;
+}
+
+.button a:active {
+    top:10px;
+    background-color:#b8b8b8;
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #007268;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #007268;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #007268;
+}
+
+.button:after {
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.anchordark {
+    color:rgb(255, 1, 1);
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#1b1b1b;
+    display:block;
+    position:relative;
+    padding:10px 25px;
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    -webkit-box-shadow:inset 0 1px 0 #000000, 0 10px 0 #6b0000;
+    -moz-box-shadow:inset 0 1px 0 #000000, 0 10px 0 #6b0000;
+    box-shadow:inset 0 1px 0 #000000, 0 10px 0 #6b0000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.field_extra {
+    line-height: 30px;
+}
+
+
+/*-----------------GENERAL ID CHANGES START-----------------*/
 #mainImage {
     height: 70%;
     width: 70%;
@@ -172,28 +297,11 @@ input:checked + .slider:before {
 
 #lsOutput{
     text-transform: uppercase;
-}
-
-fieldset {
-    border: 5px solid rgb(255, 255, 255);
-    border-style: double;
-    margin: 1%;
-}
-
-i{
-    font-size: 20px;
-    color: transparent;
-    animation: rainbow 5s linear infinite;
-}
-
-select {
     margin-top: 2%;
-    margin-bottom: 2%;
-    padding: 2%;
-    border-radius: 0px;
-    width: 50%;
 }
 
+
+/*-----------------KEYFRAMES-----------------*/
 @keyframes rainbow {
     0%   {color:lightcoral;}
     25%  {color:lightskyblue;}
@@ -202,6 +310,7 @@ select {
     100% {color:lightcoral;}
 }
 
+/*-----------------RESPONSIVE-----------------*/
 @media (max-width: 1000px){
     .container {
         max-width: 100%;
@@ -217,9 +326,6 @@ select {
     }
     .containerflex {
         display: block;
-    }
-    .darkmode {
-        width: 100%;
     }
     .secretmode {
         width: 100%;
