@@ -4,6 +4,8 @@ const inpValue = document.getElementById("inpValue");
 const lsOutput = document.getElementById("lsOutput");
 const title =    document.getElementById("clase");
 const secret =   document.getElementById("hidden");
+const results =  document.getElementById("result");
+
 
 const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Pact:"Imperial"};
 const arrayMage =     {hitpoints:"150",Mana:"3000",Energy:"500",Strenght:"5",   Speed:"50%",Faith:"Medium",Dexterity:"20", Pact:"Republic"};
@@ -35,21 +37,28 @@ const imageArray = ["./image/index1.png",
 
 //Clase constructora
 class Character {
-    constructor(level, experience) {
-        this.level = Number(document.getElementById("level"));
-        this.experience = Number(document.getElementById("exp"));
+    constructor(level) {
+        this.level = Number(level);
     }
-    calculate(){
-        let result = document.getElementById("result");
-        return result = this.level * this.experience;
+    calculateExp(){
+        return 1000 - this.level * 10;
     }
 }
-
-calculate();
 
 
 //JQUERY READY con todas las funciones jquery del proyecto
 $(()=>{
+    //Funcion onchange para la clase constructora
+    $("#level").on("change", function expCalc() { 
+        let inputValue = document.getElementById("level").value;
+        if((inputValue >= 1 && inputValue <= 100)){
+            let expTest = new Character(inputValue);
+            results.innerHTML = `At level ${inputValue} you need ` + (expTest.calculateExp()) + ` Experience to get Max lvl`;
+        }else{
+            results.innerHTML = "Type a Number between 1 to 100";
+        }
+    });
+
     //Boton para conseguir un nombre random del JSON nombres
     $("#btnName").click(function names() {
         let properties = Object.values(namesJson);
