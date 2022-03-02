@@ -48,7 +48,7 @@ class Character {
 
 //JQUERY READY con todas las funciones jquery del proyecto
 $(()=>{
-    //Funcion onchange para la clase constructora
+    //Funcion onchange para la clase constructora 
     $("#level").on("change", function expCalc() { 
         let inputValue = document.getElementById("level").value;
         if((inputValue >= 1 && inputValue <= 100)){
