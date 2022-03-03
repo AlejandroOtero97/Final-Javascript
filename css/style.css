@@ -68,7 +68,7 @@ h4 {
 /*-----------------LAYOUT START-----------------*/
 .container {
     max-width: 100%;
-    height: 100vh;
+    height: 98vh;
     display: grid;
     grid-template-columns: auto 25% 25% 25%;
     grid-template-rows: 75% auto ;
