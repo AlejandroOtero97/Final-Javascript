@@ -11,96 +11,107 @@
 <body>
 
     <div class="container">
-        <fieldset class="field_one">
-            <legend>Character Creation <i class="fa-solid fa-ghost"></i></legend>
-            <div id="message">...............</div>
-            <img src="./image/index1.png" id="mainImage" alt="">
-            <div>
-                <div id="butt" class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
-                <div id="butt" class="button"><a href="#" id="btnName">¡Generate Nickname!</a></div>
-            </div>
-        </fieldset>
-
-        <fieldset class="field_two">
-            <legend>Animations <i class="fa-brands fa-bilibili"></i></legend>
-            <div class="containerflex">
-                <div class="margin">
-                    <h3>DarkMode</h3>
-                    <label class="switch">
-                        <input type="checkbox" id="dark_mode_toggle">
-                        <span class="slider round"></span>
-                    </label>
+        <div class="content1">
+            <fieldset class="field_one">
+                <legend>Character Creation <i class="fa-solid fa-ghost"></i></legend>
+                <div id="message">...............</div>
+                <img src="./image/index1.png" id="mainImage" alt="">
+                <div>
+                    <div id="butt" class="button"><a href="#" id="btnImage">¡Generate Character!</a></div> 
+                    <div id="butt" class="button"><a href="#" id="btnName">¡Generate Nickname!</a></div>
                 </div>
-                <div class="secretmode margin">
-                    <h3>Secret Classes</h3>
-                    <label class="switch">
-                        <input type="checkbox" class="check_secret">
-                        <span class="slider round"></span>
-                    </label>
+            </fieldset>
+        </div>
+        
+        <div class="content2">
+            <fieldset class="field_two">
+                <legend>Animations <i class="fa-brands fa-bilibili"></i></legend>
+                <div class="containerflex">
+                    <div class="margin">
+                        <h3>DarkMode</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="dark_mode_toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="secretmode margin">
+                        <h3>Secret Classes</h3>
+                        <label class="switch">
+                            <input type="checkbox" class="check_secret">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-
-        <fieldset class="field_extra">
-            <legend>Level & Exp <i class="fa-solid fa-dungeon"></i></legend>
-            <p>Level (1 to 100) </p><input type="number" id="level">
-            <h4 id="result">¡Test how much exp you need for Max Level!</h4>
-        </fieldset>
-
-        <fieldset class="field_three">
-            <legend>Choose Your Class <i class="fa-solid fa-bolt-lightning"></i></legend>
-            <input class="input_class" id="power" type="text" placeholder="Select Your Ability" list="abilities">
-            <datalist id="abilities">
-                <option value="Strenght"></option>
-                <option value="Magic"></option>
-                <option value="Stealth"></option>
-                <option value="Speed"></option>
-                <option value="Size"></option>
-            </datalist>
-            <h2 id="clase">Press Enter after choosing</h2>
-
-            <div class="field_three_stats">
-                <div id="main_stats">
-                    <p>Hitpoint:</p>
-                    <p>Mana:</p>
-                    <p>Energy:</p>
-                    <p>Strenght:</p>
+            </fieldset>
+        </div>
+        
+        <div class="content3">
+            <fieldset class="field_extra">
+                <legend>Level & Exp <i class="fa-solid fa-dungeon"></i></legend>
+                <p>Level (1 to 100) </p><input type="number" id="level">
+                <h4 id="result">¡Test how much exp you need for Max Level!</h4>
+            </fieldset>
+        </div>
+        
+        <div class="content4">
+            <fieldset class="field_three">
+                <legend>Choose Your Class <i class="fa-solid fa-bolt-lightning"></i></legend>
+                <input class="input_class" id="power" type="text" placeholder="Select Your Ability" list="abilities">
+                <datalist id="abilities">
+                    <option value="Strenght"></option>
+                    <option value="Magic"></option>
+                    <option value="Stealth"></option>
+                    <option value="Speed"></option>
+                    <option value="Size"></option>
+                </datalist>
+                <h2 id="clase">Press Enter after choosing</h2>
+    
+                <div class="field_three_stats">
+                    <div id="main_stats">
+                        <p>Hitpoint:</p>
+                        <p>Mana:</p>
+                        <p>Energy:</p>
+                        <p>Strenght:</p>
+                    </div>
+                    <div id="secondary_stats">
+                        <p>Speed:</p>
+                        <p>Faith:</p>
+                        <p>Dexterity:</p>
+                        <p>Pact:</p>
+                    </div>
                 </div>
-                <div id="secondary_stats">
-                    <p>Speed:</p>
-                    <p>Faith:</p>
-                    <p>Dexterity:</p>
-                    <p>Pact:</p>
+                <div class="magic_item"></div>
+                <h2>Choose Your Magic Item</h2>
+                <select id="items">Test Dropdown</select>
+    
+                <div id="hidden">
+                    <h3 id="hidden_class">
+                        <i class="fa-regular fa-star"></i>
+                        Type more than 10 letters to get Scholar
+                        <i class="fa-regular fa-star"></i></h3>
+    
+                    <h3 id="hidden_class">
+                        <i class="fa-regular fa-star"></i>
+                        Type nothing to get Deprived
+                        <i class="fa-regular fa-star"></i>
+                    </h3>
                 </div>
-            </div>
-            <div class="magic_item"></div>
-            <h2>Choose Your Magic Item</h2>
-            <select id="items">Test Dropdown</select>
-
-            <div id="hidden">
-                <h3 id="hidden_class">
-                    <i class="fa-regular fa-star"></i>
-                    Type more than 10 letters to get Scholar
-                    <i class="fa-regular fa-star"></i></h3>
-
-                <h3 id="hidden_class">
-                    <i class="fa-regular fa-star"></i>
-                    Type nothing to get Deprived
-                    <i class="fa-regular fa-star"></i>
-                </h3>
-            </div>
-        </fieldset>
-
-        <fieldset class="field_four">
-            <legend>Create Your Account <i class="fa-solid fa-wand-magic-sparkles"></i></legend>
-            <input class="input_account" id="inpKey" type="text" placeholder="Enter Account">
-            <input class="input_account" id="inpValue" type="password" placeholder="Enter Password">
-            <div class="linea">
-                <div class="button"><a class="anchor" href="#" id="btnInsert">Insert Data</a></div>
-                <div class="button"><a class="anchor" href="#" id="btnDelete">Delete Data</a></div>
-            </div>
-            <div id="lsOutput"></div>
-        </fieldset>
+            </fieldset>
+        </div>
+        
+        <div class="content5">
+            <fieldset class="field_four">
+                <legend>Create Your Account <i class="fa-solid fa-wand-magic-sparkles"></i></legend>
+                <input class="input_account" id="inpKey" type="text" placeholder="Enter Account">
+                <input class="input_account" id="inpValue" type="password" placeholder="Enter Password">
+                <div class="linea">
+                    <div class="button"><a class="anchor" href="#" id="btnInsert">Insert Data</a></div>
+                    <div class="button"><a class="anchor" href="#" id="btnDelete">Delete Data</a></div>
+                </div>
+                <div id="lsOutput"></div>
+            </fieldset>
+        </div>
+        
     </div>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
