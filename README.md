@@ -1,45 +1,45 @@
-                            Projecto Final de Java Script Coderhouse!
+                                      Projecto Final de Java Script Coderhouse!
 
-                             Descripcion de cada sector de la pagina:
+                                    Descripcion de cada sector de la pagina:
 
-          
+      
 
-                                         Character Creator
+                                                Character Creator
 
-                      Aqui podremos seleccionar el nombre (de un array random)
-                                                Y
-                   Tambien podremos seleccionar el tipo de personaje que nos guste
+                              Aqui podremos seleccionar el nombre (de un array random)
+                                                        Y
+                          Tambien podremos seleccionar el tipo de personaje que nos guste
 
-          
-          
-                                             Animations
+      
+      
+                                                    Animations
 
-                     En este sector podremos activar 2 tipos de "animaciones"
+                            En este sector podremos activar 2 tipos de "animaciones"
 
-                 La primera sera el famoso "Modo Oscuro" tambien conocido como Darkmode
+                        La primera sera el famoso "Modo Oscuro" tambien conocido como Darkmode
 
-          
-          
-                                            Level & Exp
+      
+      
+                                                    Level & Exp
 
-                       Este sector es una calculadora de experiencia para saber 
+                              Este sector es una calculadora de experiencia para saber 
 
-                         cuanto nos falta para llegar a nuestro deseado nivel!
+                                cuanto nos falta para llegar a nuestro deseado nivel!
 
-          
-          
-                                         Choose Your Class
+      
+      
+                                                Choose Your Class
 
-                La primer parte del sector nos brinda el selector de clase (2 secretas)
+                        La primer parte del sector nos brinda el selector de clase (2 secretas)
 
-                           las cuales nos devuelven sus propias estadisticas
+                                  las cuales nos devuelven sus propias estadisticas
 
-                             luego podremos seleccionar nuestro item magico
+                                    luego podremos seleccionar nuestro item magico
 
-          
-                                          Create Your Account
+      
+                                                  Create Your Account
 
-                        Por ultimo tenemos el sistema de Sign In o Crear cuenta
+                                Por ultimo tenemos el sistema de Sign In o Crear cuenta
 
-                       por si en un futuro queres no olvidarnos de nuestros datos
+                              por si en un futuro queres no olvidarnos de nuestros datos
 
