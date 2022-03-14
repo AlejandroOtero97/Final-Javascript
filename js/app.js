@@ -5,6 +5,8 @@ const lsOutput = document.getElementById("lsOutput");
 const title =    document.getElementById("clase");
 const secret =   document.getElementById("hidden");
 const results =  document.getElementById("result");
+const showName = document.getElementById("showName");
+const message =  document.getElementById("message");
 
 
 const arrayWarrior =  {hitpoints:"500",Mana:"0",   Energy:"1000",Strenght:"100",Speed:"35%",Faith:"None",  Dexterity:"5",  Pact:"Imperial"};
@@ -36,8 +38,8 @@ const imageArray = ["./image/index1.png",
 
 
 //Clase constructora
-class Character {
-    constructor(level) {
+class Character{
+    constructor(level){
         this.level = Number(level);
     }
     calculateExp(){
@@ -49,7 +51,7 @@ class Character {
 //JQUERY READY con todas las funciones jquery del proyecto
 $(()=>{
     //Funcion onchange para la clase constructora 
-    $("#level").on("change", function expCalc() { 
+    $("#level").on("change", function expCalc(){ 
         let inputValue = document.getElementById("level").value;
         if((inputValue >= 1 && inputValue <= 100)){
             let expTest = new Character(inputValue);
@@ -60,14 +62,15 @@ $(()=>{
     });
 
     //Boton para conseguir un nombre random del JSON nombres
-    $("#btnName").click(function names() {
+    $("#btnName").click(function names(){
         let properties = Object.values(namesJson);
         let index = Math.floor(Math.random() * properties.length);
-        document.getElementById("message").innerHTML = properties[index];
+        message.innerHTML = properties[index];
+        showName.innerHTML = `<i class="fa-regular fa-star"></i> ` + properties[index] + ` <i class="fa-regular fa-star"></i>`;
     });
 
     //Boton para conseguir una imagen random del Array
-    $("#btnImage").click(function image() {
+    $("#btnImage").click(function image(){
         let randomNumber = Math.floor(Math.random()*imageArray.length);
         document.getElementById("mainImage").src = (imageArray[randomNumber]);
     });
@@ -95,9 +98,9 @@ $(()=>{
     });
 
     //Efecto de hover para los fieldsets
-    $("fieldset").hover(function () {
+    $("fieldset").hover(function (){
             $(this).addClass("rainbowAnim");
-        }, function () {
+        }, function (){
             $(this).removeClass("rainbowAnim");
         }
     );
@@ -108,12 +111,34 @@ $(()=>{
             $("body").addClass("bodydark");
             $("fieldset").addClass("fieldsetdark");
             $("a").addClass("anchordark");
+            $("section").addClass("jquerydark");
         }else{
             $("body").removeClass("bodydark");
             $("fieldset").removeClass("fieldsetdark");
             $("a").removeClass("anchordark");
+            $("section").removeClass("jquerydark");
         }
     });
+
+    //Animacion
+    let jqueryAnimation = {init: function(){
+        $('.jquerySlider').css({
+            overflow: 'hidden'
+        });
+        $('.jquerySlider').on('mouseout',function(){
+            $('section', this).animate({
+                right: '100%'},7000, 'linear' );
+        });
+        jqueryAnimation.loop();
+      },
+    loop: function(){
+        $('.jquerySlider section').css({
+            position: 'relative',
+            right: '-100%'}).animate({
+            right: '100%'},7000, 'linear', jqueryAnimation.loop);
+    }
+    };
+    jqueryAnimation.init();
 
     //Funciones onFocus para el formato mobile
     $("#power").on("focus",()=>{document.getElementById("power").value = "";});
@@ -123,7 +148,7 @@ $(()=>{
     let ajax = new XMLHttpRequest();
     ajax.open("GET",`https://www.dnd5eapi.co/api/magic-items`);
     ajax.send();
-    ajax.onreadystatechange = function () {
+    ajax.onreadystatechange = function (){
         if(this.readyState == 4 && this.status == 200){
             let tmp = JSON.parse(this.responseText);
             let datos = (tmp.results);
@@ -137,7 +162,7 @@ $(()=>{
 //For para insertar los datos conseguidos del localstorage
 for(i = 0; i < localStorage.length; i++){
     let key = localStorage.key(i);
-    if(showValidate(key)){
+    if(key){
         let value = localStorage.getItem(key);
         lsOutput.innerHTML += `${key}: ${value} <br/>`;
         break;
@@ -156,10 +181,12 @@ if($("#dark_mode_toggle").is(":checked")){
     $("body").addClass("bodydark");
     $("fieldset").addClass("fieldsetdark");
     $("a").addClass("anchordark");
+    $("section").addClass("jquerydark");
 }else{
     $("body").removeClass("bodydark");
     $("fieldset").removeClass("fieldsetdark");
     $("a").removeClass("anchordark");
+    $("section").removeClass("jquerydark");
 }
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
@@ -167,9 +194,9 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         validate();
     });
     title.textContent = "Select Your Class!";
-}else {
+}else{
     $("#power").keydown((e)=>{
-        if (e.key === "Enter") {  
+        if (e.key === "Enter"){  
             validate(e);
         }
     });
@@ -180,9 +207,9 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 //Funciones del proyecto (validacion de clases, obtencion de clases de manera exacta y aproximada, muestra de estadisticas segun clase elegida)
 function validate(){
-    let valorClase = document.getElementById("power").value;
-    let claseObtenida = obtainClass(valorClase);
-    document.getElementById("clase").innerText= claseObtenida;
+    let classValue = document.getElementById("power").value;
+    let classObtain = obtainClass(classValue);
+    document.getElementById("clase").innerText= classObtain;
 }
 
 function obtainClass(attribute){
@@ -206,7 +233,7 @@ function obtainExactClass(attribute){
         showStats(2);
         return "Assassin";
     }
-    else {
+    else{
         return null;
     }
 }
@@ -216,13 +243,13 @@ function obtainPredictionClass(attribute){
         showStats(3);
         return "Scholar";
     }
-    else {
+    else{
         showStats(4);
         return "Deprived";
     }
 }
 
-function showStats(index) {
+function showStats(index){
     let column1 = document.getElementById("main_stats");
     let column2 = document.getElementById("secondary_stats")
     let data = arrayClasses[index];
@@ -236,11 +263,4 @@ function showStats(index) {
                 <p>Pact:${data.Pact}</p>`;
     column1.innerHTML = row;
     column2.innerHTML = row2;  
-}
-
-function showValidate(key){
-    if(key == "darkMode"){
-        return false;
-    }
-    return true;
 }
