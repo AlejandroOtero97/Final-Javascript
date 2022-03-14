@@ -249,8 +249,8 @@ input:checked + .slider:before {
 .anchordark {
     color:rgb(255, 1, 1);
     font-weight:bold;
-    font-size: 1em;
     text-align: center;
+    font-size: 1em;
     text-decoration:none;
     background-color:#1b1b1b;
     display:block;
@@ -363,7 +363,7 @@ input:checked + .slider:before {
         width: 80%;
     }
     .button {
-        margin: 0.5em;
+        margin: 0.8em;
     }
     #lsOutput {
         margin-top: 10%;
@@ -388,3 +388,34 @@ input:checked + .slider:before {
         width: 80%;
     }
 }
+
+@media (max-width: 1300px){
+    .buttons {
+        font-size: 0.50em;
+    }
+}
+
+@media (max-width: 1400px){
+    .buttons {
+        font-size: 0.60em;
+    }
+}
+
+@media (max-width: 1500px){
+    .buttons {
+        font-size: 0.65em;
+    }
+}
+
+@media (max-width: 1600px){
+    .buttons {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 1700px){
+    .buttons {
+        font-size: 0.85em;
+    }
+}
+
