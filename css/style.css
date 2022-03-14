@@ -270,7 +270,6 @@ input:checked + .slider:before {
     line-height: 1.7em;
 }
 
-/*WIP*/
 .jquerydark {
     color: red;
 }
@@ -283,7 +282,6 @@ input:checked + .slider:before {
     border-radius: 0.5em;
     color: #008585;
 }
-/*WIP*/
 
 /*-----------------GENERAL ID CHANGES START-----------------*/
 #mainImage {
