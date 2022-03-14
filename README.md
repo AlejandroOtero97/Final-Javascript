@@ -30,7 +30,7 @@
              
                              Choose Your Class
                               
- La primer parte del sector nos brinda el selector de clase (contiene 2 secretas)
+    La primer parte del sector nos brinda el selector de clase (2 secretas)
 
                las cuales nos devuelven sus propias estadisticas
               
